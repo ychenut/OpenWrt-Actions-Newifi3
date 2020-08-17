@@ -4,6 +4,18 @@ Auto build OpenWrt firmware for Newifi D2 via GitHub Actions
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/P3TERX/OpenWrt-Newifi_D2?style=for-the-badge&label=Download)](https://github.com/P3TERX/OpenWrt-Newifi_D2/releases/latest)
 
+### 开原驱动配置
+
+```
+CONFIG_PACKAGE_kmod-mt7603=y
+CONFIG_PACKAGE_kmod-mt7603e=n
+CONFIG_PACKAGE_kmod-mt76x2=y
+CONFIG_PACKAGE_kmod-mt76x2-common=y
+CONFIG_PACKAGE_kmod-mt76x2e=n
+
+CONFIG_PACKAGE_luci-app-mtwifi=n
+```
+
 ### LuCI应用说明
 - luci-app-accesscontrol #访问时间控制
 - luci-app-adbyby-plus #广告屏蔽大师Plus +
