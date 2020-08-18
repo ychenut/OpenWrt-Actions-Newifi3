@@ -12,11 +12,11 @@ on:
   repository_dispatch:
   release:
     types: published
-  push:
-    branches:
-      - master
-    paths:
-      - 'open.config'
+  # push:
+  #   branches:
+  #     - master
+  #   paths:
+  #     - 'open.config'
   schedule:
     - cron: 0 20 * * *
   watch:
