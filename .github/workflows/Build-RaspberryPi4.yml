@@ -12,15 +12,15 @@ on:
   repository_dispatch:
   release:
     types: published
-  # push:
-  #   branches:
-  #     - master
-  #   paths:
-  #     - 'RaspberryPi4.config'
-  schedule:
-    - cron: 0 20 * * *
-  watch:
-    types: started
+  push:
+    branches:
+      - master
+    paths:
+      - 'RaspberryPi4.config'
+#   schedule:
+#     - cron: 0 20 * * *
+#   watch:
+#     types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
