@@ -12,15 +12,15 @@ name: OpenWrt-Newifi3
 
 on:
   repository_dispatch:
-  release:
-    types: published
+  # release:
+  #   types: published
   # push:
   #   branches:
   #     - master
   #   paths:
   #     - 'Newifi3.config'
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 20 * * 5
   watch:
     types: started
 
