@@ -172,6 +172,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: "AutoBuild"
+        tag_name: "AutoRelease"
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
