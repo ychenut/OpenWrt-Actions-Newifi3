@@ -37,6 +37,7 @@ env:
   UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: true
   UPLOAD_RELEASE: true
+  RELEASE_TAG: AutoRelease
   TZ: Asia/Shanghai
 
 jobs:
@@ -84,7 +85,10 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e $
+        
+        
+        ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
@@ -160,7 +164,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-env name=RELEASE_TAG::$("AutoBuild")"
+        echo "::set-env name=RELEASE_TAG::${RELEASE_TAG}"
         echo "🚀 Auto build" >> release.txt
         echo "🔗 [Cowtransfer](${{ env.COWTRANSFER_URL }})" >> release.txt
         echo "🔗 [WeTransfer](${{ env.WETRANSFER_URL }})" >> release.txt
