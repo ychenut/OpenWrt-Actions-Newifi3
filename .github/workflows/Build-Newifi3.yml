@@ -160,7 +160,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-env name=RELEASE_TAG::$(date +"%Y.%m.%d-%H")"
+        echo "::set-env name=RELEASE_TAG::$("AutoBuild")"
         echo "🚀 Auto build" >> release.txt
         echo "🔗 [Cowtransfer](${{ env.COWTRANSFER_URL }})" >> release.txt
         echo "🔗 [WeTransfer](${{ env.WETRANSFER_URL }})" >> release.txt
@@ -172,6 +172,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: "AutoBuild"
+        tag_name: ${{ env.RELEASE_TAG }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
